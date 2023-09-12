@@ -3,6 +3,7 @@ package com.sky.service.impl;
 import com.sky.constant.MessageConstant;
 import com.sky.constant.PasswordConstant;
 import com.sky.constant.StatusConstant;
+import com.sky.context.BaseContext;
 import com.sky.dto.EmployeeDTO;
 import com.sky.dto.EmployeeLoginDTO;
 import com.sky.entity.Employee;
@@ -68,6 +69,8 @@ public class EmployeeServiceImpl implements EmployeeService {
      * @param employeeDTO
      */
     public void save(EmployeeDTO employeeDTO) {
+        // System.out.println("当前线程的id"+Thread.currentThread().getId());
+        // 验证当前线程是不是和EmploController以及JwtTokenAdminInterceptor属于同一个线程且每次请求为单独线程
         Employee employee = new Employee();
 
         //对象属性拷贝
@@ -84,9 +87,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setUpdateTime(LocalDateTime.now());
 
         //设置当前记录创建人id和修改人id
-        // todo 后期需要改为当前用户登录的id
-        employee.setCreateUser(10L);//目前写个假数据，后期修改
-        employee.setUpdateUser(10L);
+        employee.setCreateUser(BaseContext.getCurrentId());//目前写个假数据，后期修改
+        employee.setUpdateUser(BaseContext.getCurrentId());
 
         employeeMapper.insert(employee);//后续步骤定义
     }
