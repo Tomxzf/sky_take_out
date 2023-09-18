@@ -1,4 +1,10 @@
 sky:
+  alioss:
+    endpoint: oss-cn-beijing.aliyuncs.com
+    access-key-id: LTAI5tNG3NSXzKNEQXrtvBxU
+    access-key-secret: z8PxXLHZlGtlraJOcdvCQcGLGBEmZI
+    bucket-name: cool-take-out
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     host: localhost
