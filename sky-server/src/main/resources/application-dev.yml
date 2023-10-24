@@ -17,10 +17,10 @@ sky:
     port: 6379
     database: 10
   wechat:
-    appid: wx8f18c72c11fcb12e
-    secret: 8cd71fe534f8f1dc547aebfb17606d0a
-    mchid: 1561414331
-    mchSerialNo: 4B3B3DC35414AD50B1B755BAF8DE9CC7CF407606
+    appid: xxxxxx
+    secret: xxxxxxxxx
+    mchid: xxxxx
+    mchSerialNo: xxxxx
     privateKeyFilePath: D:\apiclient_key.pem
     apiV3Key: CZBK51236435wxpay435434323FFDuv3
     weChatPayCertFilePath: D:\wechatpay_166D96F876F45C7D07CE98952A96EC980368ACFC.pem
